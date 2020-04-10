@@ -2,6 +2,15 @@
 
 This repository contains the accompanying code for the paper:
 
-**"Injecting Numerical Reasoning Skills into Language Models."** Mor Geva*, Ankit Gupta* and Jonathan Berant. *In ACL, 2020* [Paper PDF](https://arxiv.org/pdf/2004.04487.pdf)
+**"Injecting Numerical Reasoning Skills into Language Models."** Mor Geva*, Ankit Gupta* and Jonathan Berant. *In ACL, 2020* [PDF](https://arxiv.org/pdf/2004.04487.pdf)
+
+```
+@inproceedings{geva2020injecting,
+  title={Injecting Numerical Reasoning Skills into Language Models},
+  author={Mor Geva and Ankit Gupta and Jonathan Berant},
+  booktitle={ ACL },
+  year={ 2020 }
+}
+```
 
 **We are currently in the process of organizing the code and will soon be releasing it.**
