@@ -9,7 +9,7 @@ This repository contains the accompanying code for the paper:
 
 ### Citation
 ```
-@inproceedings{geva2020injecting,
+@inproceedings{ggb2020injecting,
   title={Injecting Numerical Reasoning Skills into Language Models},
   author={Mor Geva and Ankit Gupta and Jonathan Berant},
   booktitle={ ACL },
