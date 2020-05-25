@@ -1,0 +1,104 @@
+{
+  "_name": "demographic",
+
+  "VERB": {
+    "OBS": [
+      { "value":"had" }
+    ],
+    "POS": [
+      { "value":"recruited" },
+      { "value":"appointed" },
+      { "value":"captured" }
+    ],
+    "NEG": [
+      { "value":"executed" },
+      { "value":"lost" },
+      { "value":"released" }
+    ],
+    "NEGTRN": [
+      { "value":"passed" },
+      { "value":"transferred" }
+    ],
+    "POSTRN": [
+      { "value":"borrowed" },
+      { "value":"received" },
+      { "value":"took" }
+    ]
+  },
+
+  "CONT": {
+    "AGT" : [
+      { "value":"the government", "attributes": [], "parent_indices": [] },
+      { "value":"the military", "attributes": [], "parent_indices": [] },
+      { "value":"the householder", "attributes": [], "parent_indices": [] },
+      { "value":"the commander", "attributes": [], "parent_indices": [] },
+      { "value":"the king", "attributes": [], "parent_indices": [] }
+    ],
+    "ENV": [
+      { "value":"the country", "attributes": [], "parent_indices": ["AGT-1"] },
+      { "value":"the city", "attributes": [], "parent_indices": ["ENV-1", "AGT-1"] },
+      { "value":"battle", "attributes": [], "parent_indices": ["AGT-4"] },
+      { "value":"United States", "attributes": [], "parent_indices": [] },
+      { "value":"France", "attributes": [], "parent_indices": [] },
+      { "value":"Spain", "attributes": [], "parent_indices": [] },
+      { "value":"Russia", "attributes": [], "parent_indices": [] }
+    ]
+  },
+
+  "ENT": [
+    {
+      "value":"people",
+      "attributes": ["African American", "Native American", "Spanish", "English", "Polish", "Chinese", "Japanese", "Irish", "Italian", "Germans", "Danish", "British"],
+      "number_min": 2,
+      "number_max": 20000
+    },
+    {
+      "value":"households",
+      "attributes": [],
+      "number_min": 10,
+      "number_max": 5000
+    },
+    {
+      "value":"families",
+      "attributes": ["urban", "African American", "Native American", "Spanish", "English", "Polish", "Chinese", "Japanese","Irish", "Italian", "Germans", "Danish", "British"],
+      "number_min": 20,
+      "number_max": 2000
+    },
+    {
+      "value":"citizens",
+      "attributes": ["female", "male", "white", "black", "asian"],
+      "number_min": 100,
+      "number_max": 20000
+    },
+    {
+      "value":"rebels",
+      "attributes": ["female", "male", "white", "black", "asian"],
+      "number_min": 100,
+      "number_max": 20000
+    },
+    {
+      "value":"voters",
+      "attributes": ["female", "male", "white", "black", "asian"],
+      "number_min": 100,
+      "number_max": 20000
+    },
+    {
+      "value":"groups",
+      "attributes": ["native", "foreign"],
+      "number_min": 2,
+      "number_max": 10
+    },
+    {
+      "value":"soldiers",
+      "attributes": ["African American", "Native American", "Spanish", "English", "Polish", "Chinese", "Japanese", "Irish", "Italian", "Germans", "Danish", "British"],
+      "number_min": 1000,
+      "number_max": 20000
+    },
+    {
+      "value":"troops",
+      "attributes": ["African American", "Native American", "Spanish", "English", "Polish", "Chinese", "Japanese","Irish", "Italian", "Germans", "Danish", "British"],
+      "number_min": 1000,
+      "number_max": 20000
+    }
+  ]
+}

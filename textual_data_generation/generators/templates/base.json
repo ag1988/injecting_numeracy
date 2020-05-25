@@ -1,0 +1,319 @@
+{
+  "_name": "base",
+  "_subtype_joker": "*",
+
+  "questions": [
+    {
+      "abstracted": "How many more ATTR-1 ENT-1 are there than ATTR-2 ENT-2 ?",
+      "query": [
+        {
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-1"]
+        },
+        {
+          "entity": "ENT-2",
+          "entity_attributes": ["ATTR-2"]
+        }
+      ],
+      "expression": [1, -1]
+    },
+    {
+      "abstracted": "How many ENT-1 were VERB-1-* in the ATTR-1 CONT-1-ENV ?",
+      "query": [
+        {
+          "container": "CONT-1-ENV",
+          "container_attributes": ["ATTR-1"],
+          "entity": "ENT-1",
+          "verb": "VERB-1-*"
+        }
+      ],
+      "expression": [1]
+    },
+    {
+      "abstracted": "How many ENT-1 did CONT-1-AGT VERB-1-* ?",
+      "query": [
+        {
+          "container": "CONT-1-AGT",
+          "entity": "ENT-1",
+          "verb": "VERB-1-*"
+        }
+      ],
+      "expression": [1]
+    },
+    {
+      "abstracted": "How many ENT-1 of ATTR-1 CONT-1-ENV were ATTR-2 ENT-1 ?",
+      "query": [
+        {
+          "container": "CONT-1-ENV",
+          "container_attributes": ["ATTR-1"],
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-2"]
+        }
+      ],
+      "expression": [1]
+    },
+    {
+      "abstracted": "How many ENT-1 of ATTR-1 CONT-1-ENV were not ATTR-2 ENT-1 ?",
+      "query": [
+        {
+          "container": "CONT-1-ENV",
+          "container_attributes": ["ATTR-1"],
+          "entity": "ENT-1"
+        },
+        {
+          "container": "CONT-1-ENV",
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-2"]
+        }
+      ],
+      "expression": [1, -1]
+    }
+  ],
+
+  "sentences": [
+    {
+      "abstracted": "CONT-1-AGT VERB-1-* NUM-1 ATTR-1 ENT-1 .",
+      "state_updates": [
+        {
+          "container": "CONT-1-AGT",
+          "container_attributes": [],
+          "verb": "VERB-1-*",
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-1"],
+          "number": "NUM-1"
+        }
+      ]
+    },
+    {
+      "abstracted": "CONT-1-AGT VERB-1-POS NUM-1 ATTR-1 ENT-1 and CONT-2-AGT VERB-1-POS NUM-2 ATTR-1 ENT-1 .",
+      "state_updates": [
+        {
+          "container": "CONT-1-AGT",
+          "container_attributes": [],
+          "verb": "VERB-1-POS",
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-1"],
+          "number": "NUM-1"
+        },
+        {
+          "container": "CONT-2-AGT",
+          "container_attributes": [],
+          "verb": "VERB-1-POS",
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-1"],
+          "number": "NUM-2"
+        }
+      ]
+    },
+    {
+      "abstracted": "CONT-1-AGT VERB-1-POS NUM-1 ATTR-1 ENT-1 and NUM-2 ATTR-2 ENT-2 .",
+      "state_updates": [
+        {
+          "container": "CONT-1-AGT",
+          "container_attributes": [],
+          "verb": "VERB-1-POS",
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-1"],
+          "number": "NUM-1"
+        },
+        {
+          "container": "CONT-1-AGT",
+          "container_attributes": [],
+          "verb": "VERB-1-POS",
+          "entity": "ENT-2",
+          "entity_attributes": ["ATTR-2"],
+          "number": "NUM-2"
+        }
+      ]
+    },
+    {
+      "abstracted": "CONT-1-AGT VERB-1-POS NUM-1 ATTR-1 ENT-1 , but VERB-2-NEG NUM-2 ATTR-2 ENT-2 .",
+      "state_updates": [
+        {
+          "container": "CONT-1-AGT",
+          "container_attributes": [],
+          "verb": "VERB-1-POS",
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-1"],
+          "number": "NUM-1"
+        },
+        {
+          "container": "CONT-1-AGT",
+          "container_attributes": [],
+          "verb": "VERB-2-NEG",
+          "entity": "ENT-2",
+          "entity_attributes": ["ATTR-2"],
+          "number": "NUM-2"
+        }
+      ]
+    },
+    {
+      "abstracted": "CONT-1-AGT VERB-1-POS NUM-1 ATTR-1 ENT-1 in ATTR-2 CONT-2-ENV .",
+      "state_updates": [
+        {
+          "container": "CONT-1-AGT",
+          "container_attributes": [],
+          "verb": "VERB-1-POS",
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-1"],
+          "number": "NUM-1"
+        },
+        {
+          "container": "CONT-2-ENV",
+          "container_attributes": ["ATTR-2"],
+          "verb": "VERB-1-POS",
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-1"],
+          "number": "NUM-1"
+        }
+      ]
+    },
+    {
+      "abstracted": "CONT-1-AGT VERB-1-NEG NUM-1 of the ATTR-1 ENT-1 .",
+      "state_updates": [
+        {
+          "container": "CONT-1-AGT",
+          "container_attributes": [],
+          "verb": "VERB-1-NEG",
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-1"],
+          "number": "NUM-1"
+        }
+      ]
+    },
+    {
+      "abstracted": "CONT-1-AGT had NUM-1 ATTR-1 ENT-1 , CONT-2-AGT had NUM-2 ATTR-1 ENT-1 , and CONT-3-AGT had NUM-3 ATTR-1 ENT-1 .",
+      "state_updates": [
+        {
+          "container": "CONT-1-AGT",
+          "container_attributes": [],
+          "verb": null,
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-1"],
+          "number": "NUM-1"
+        },
+        {
+          "container": "CONT-2-AGT",
+          "container_attributes": [],
+          "verb": null,
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-1"],
+          "number": "NUM-2"
+        },
+        {
+          "container": "CONT-3-AGT",
+          "container_attributes": [],
+          "verb": null,
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-1"],
+          "number": "NUM-3"
+        }
+      ]
+    },
+    {
+      "abstracted": "NUM-1 ATTR-1 ENT-1 , NUM-2 ATTR-2 ENT-2 , and NUM-3 ATTR-3 ENT-3 were VERB-1-POS in ATTR-4 CONT-1-ENV .",
+      "state_updates": [
+        {
+          "container": "CONT-1-ENV",
+          "container_attributes": ["ATTR-4"],
+          "verb": "VERB-1-POS",
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-1"],
+          "number": "NUM-1"
+        },
+        {
+          "container": "CONT-1-ENV",
+          "container_attributes": ["ATTR-4"],
+          "verb": "VERB-1-POS",
+          "entity": "ENT-2",
+          "entity_attributes": ["ATTR-2"],
+          "number": "NUM-2"
+        },
+        {
+          "container": "CONT-1-ENV",
+          "container_attributes": ["ATTR-4"],
+          "verb": "VERB-1-POS",
+          "entity": "ENT-3",
+          "entity_attributes": ["ATTR-3"],
+          "number": "NUM-3"
+        }
+      ]
+    },
+    {
+      "abstracted": "There were NUM-1 ATTR-1 ENT-1 and NUM-2 ATTR-2 ENT-2 in ATTR-3 CONT-1-ENV .",
+      "state_updates": [
+        {
+          "container": "CONT-1-ENV",
+          "container_attributes": ["ATTR-3"],
+          "verb": null,
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-1"],
+          "number": "NUM-1"
+        },
+        {
+          "container": "CONT-1-ENV",
+          "container_attributes": ["ATTR-3"],
+          "verb": null,
+          "entity": "ENT-2",
+          "entity_attributes": ["ATTR-2"],
+          "number": "NUM-2"
+        }
+      ]
+    },
+    {
+      "abstracted": "There were NUM-1 ATTR-1 ENT-1 in ATTR-2 CONT-1-ENV .",
+      "state_updates": [
+        {
+          "container": "CONT-1-ENV",
+          "container_attributes": ["ATTR-2"],
+          "verb": null,
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-1"],
+          "number": "NUM-1"
+        }
+      ]
+    },
+    {
+      "abstracted": "CONT-1-AGT VERB-1-NEGTRN NUM-1 ATTR-1 ENT-1 to CONT-2-AGT .",
+      "state_updates": [
+        {
+          "container": "CONT-1-AGT",
+          "container_attributes": [],
+          "verb": "VERB-1-NEGTRN",
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-1"],
+          "number": "NUM-1"
+        },
+        {
+          "container": "CONT-2-AGT",
+          "container_attributes": [],
+          "verb": "VERB-1-NEGTRN",
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-1"],
+          "number": "NUM-1"
+        }
+      ]
+    },
+    {
+      "abstracted": "CONT-1-AGT VERB-1-POSTRN NUM-1 ATTR-1 ENT-1 from CONT-2-AGT .",
+      "state_updates": [
+        {
+          "container": "CONT-1-AGT",
+          "container_attributes": [],
+          "verb": "VERB-1-POSTRN",
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-1"],
+          "number": "NUM-1"
+        },
+        {
+          "container": "CONT-2-AGT",
+          "container_attributes": [],
+          "verb": "VERB-1-POSTRN",
+          "entity": "ENT-1",
+          "entity_attributes": ["ATTR-1"],
+          "number": "NUM-1"
+        }
+      ]
+    }
+  ]
+}

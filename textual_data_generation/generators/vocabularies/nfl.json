@@ -1,0 +1,94 @@
+{
+  "_name": "nfl",
+
+  "VERB": {
+    "POS": [
+      { "value":"scored" },
+      { "value":"kicked" },
+      { "value":"threw" },
+      { "value":"fired" },
+      { "value":"drove" },
+      { "value":"nailed" },
+      { "value":"got" },
+      { "value":"completed" }
+    ]
+  },
+
+  "CONT": {
+    "AGT": [
+      {"value":"Broncos", "attributes": [], "parent_indices": []},
+      {"value":"Patriots", "attributes": [], "parent_indices": []},
+      {"value":"Colts", "attributes": [], "parent_indices": []},
+      {"value":"Bears", "attributes": [], "parent_indices": []},
+      {"value":"Vikings", "attributes": [], "parent_indices": []},
+      {"value":"Lions", "attributes": [], "parent_indices": []},
+      {"value":"Dolphins", "attributes": [], "parent_indices": []},
+      {"value":"Eagles", "attributes": [], "parent_indices": []},
+      {"value":"Jaguars", "attributes": [], "parent_indices": []},
+      {"value":"Seahawks", "attributes": [], "parent_indices": []},
+      {"value":"Eagles' receiver", "attributes": [], "parent_indices": ["AGT-8"]},
+      {"value":"Jaguars' quarterback", "attributes": [], "parent_indices": ["AGT-9"]},
+      {"value":"Janikowski", "attributes": [], "parent_indices": ["AGT-10"]},
+      {"value":"Houston", "attributes": [], "parent_indices": ["AGT-3"]},
+      {"value":"Brady", "attributes": [], "parent_indices": ["AGT-2"]},
+      {"value":"Manning", "attributes": [], "parent_indices": ["AGT-3"]}
+    ],
+    "ENV": [
+      {"value":"half", "attributes": ["the first"], "parent_indices": []},
+      {"value":"half", "attributes": ["the second"], "parent_indices": []},
+      {"value":"quarter", "attributes": ["the first", "the second"], "parent_indices": ["ENV-1"]},
+      {"value":"quarter", "attributes": ["the third", "the fourth"], "parent_indices": ["ENV-2"] },
+      {"value":"San Diego", "attributes": [], "parent_indices": []},
+      {"value":"Miami", "attributes": [], "parent_indices": []},
+      {"value":"Pittsburgh", "attributes": [], "parent_indices": []},
+      {"value":"New Orleans", "attributes": [], "parent_indices": []},
+      {"value":"Washington", "attributes": [], "parent_indices": []},
+      {"value":"Chicago", "attributes": [], "parent_indices": []}
+    ]
+  },
+
+  "ENT": [
+    {
+      "value":"yards",
+      "attributes": ["passing", "running", "rushing", "field goal"],
+      "number_min": 2,
+      "number_max": 60
+    },
+    {
+      "value":"field goals",
+      "attributes": [],
+      "number_min": 1,
+      "number_max": 10
+    },
+    {
+      "value":"wins",
+      "attributes": ["impressive", "tight"],
+      "number_min": 2,
+      "number_max": 6
+    },
+    {
+      "value":"losses",
+      "attributes": ["embarrassing"],
+      "number_min": 2,
+      "number_max": 6
+    },
+    {
+      "value":"touchdowns",
+      "attributes": ["passing", "running", "rushing"],
+      "number_min": 2,
+      "number_max": 10
+    },
+    {
+      "value":"points",
+      "attributes": [],
+      "number_min": 3,
+      "number_max": 60
+    },
+    {
+      "value":"passes",
+      "attributes": [],
+      "number_min": 2,
+      "number_max": 10
+    }
+  ]
+}
