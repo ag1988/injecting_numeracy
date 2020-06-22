@@ -1,8 +1,6 @@
-# Coming Soon!
-
 # Pre-training BERT on datasets in DROP format
 
-**Download the data + trained models** : Download `genbert_data_and_models.tar.gz` from ???? to the current dir. Untar it and download DROP dataset using `bash download.sh`. This will also place the downloaded data inside appropriate sub-dirs.
+**Download the data + trained models** : Download `genbert_data_and_models.tar.gz` from ?? to the current dir. Untar it and download DROP dataset using `bash download.sh`. This will also place the downloaded data inside appropriate sub-dirs.
 
 **Masked LM Task** : Wiki pages inside `./data/MLM_paras.jsonl` are tokenized and masked via `gen_train_data_MLM.py` (to create `MLM_paras.jsonl`, after [downloading & preparing](https://hotpotqa.github.io/wiki-readme.html) Wikipedia, we concatenated the paras after placing a string `■ .` to indicate end of para. We only kept the pages corresponding to the titles in `./data/wiki_titles_used.jsonl`). You can create masked MLM instances via:
 ```
