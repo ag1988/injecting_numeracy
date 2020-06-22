@@ -21,44 +21,44 @@ $ python create_examples_n_features.py --split eval --drop_json ../data/syntheti
 As the training sets are large, some of these can consume a lot of RAM.
 
 
-2) Training GenBERT using the above generated features (you can reduce the number of gpu's if you're not getting OOM errors):
+2) Training GenBERT using the above generated features (you can reduce the number of gpu's as long as you're not getting OOM errors):
 
-Pretraining:  
+**Pretraining:**  
 
-GenBERT + ND
+*GenBERT + ND*
 ```
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python finetune_on_drop.py  --do_train   --do_eval  --mlm_dir ../data/MLM_train/ --examples_n_features_dir ./data/examples_n_features_numeric/ --train_batch_size 800 --mlm_batch_size 48 --mlm_scale 0.5 --eval_batch_size 1200 --learning_rate 6e-5  --max_seq_length 50 --num_train_epochs 60.0 --warmup_proportion 0.1 --output_dir out_numeric_finetune_bert --random_shift --num_train_samples -1
 ```
 
-GenBERT + TD
+*GenBERT + TD*
 ```
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python finetune_on_drop.py   --do_train   --do_eval  --mlm_dir ../data/MLM_train/ --examples_n_features_dir ./data/examples_n_features_syntext/ --train_batch_size 240 --mlm_batch_size 48 --mlm_scale 0.5 --eval_batch_size 1000 --learning_rate 1e-5  --max_seq_length 160 --num_train_epochs 5.0 --warmup_proportion 0.1 --output_dir out_syntext_finetune_bert --random_shift --num_train_samples -1
 ```
 
-GenBERT + ND + TD
+*GenBERT + ND + TD*
 ```
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python train_textual_with_numeric.py  --do_train   --do_eval --mlm_dir ../data/MLM_train/ --examples_n_features_dir_syntext ./data/examples_n_features_syntext/ --examples_n_features_dir_numeric ./data/examples_n_features_numeric/ --train_batch_size_syntext 240 --train_batch_size_numeric 624 --mlm_batch_size 48 --mlm_scale 0.5 --eval_batch_size 1000 --learning_rate 1e-5 --num_train_epochs 5.0 --warmup_proportion 0.1 --output_dir out_syntext_and_numeric_finetune_numeric --init_weights_dir out_numeric_finetune_bert --random_shift --num_train_samples -1
 ```
 ---
 
-Finetuning:  
+**Finetuning:** 
 
-GenBERT + DROP
+*GenBERT + DROP*
 ```
 CUDA_VISIBLE_DEVICES=0,1,2,3 python finetune_on_drop.py   --do_train   --do_eval  --examples_n_features_dir ./data/examples_n_features/ --train_batch_size 16 --mlm_batch_size -1 --eval_batch_size 360 --learning_rate 3e-5  --max_seq_length 512 --num_train_epochs 30.0 --warmup_proportion 0.1 --output_dir out_drop_finetune_bert --num_train_samples -1
 ```
 
-GenBERT + ND + DROP
+*GenBERT + ND + DROP*
 ```
 CUDA_VISIBLE_DEVICES=0,1,2,3 python finetune_on_drop.py   --do_train   --do_eval  --examples_n_features_dir ./data/examples_n_features/ --train_batch_size 16 --mlm_batch_size -1 --eval_batch_size 360 --learning_rate 3e-5  --max_seq_length 512 --num_train_epochs 30.0 --warmup_proportion 0.1 --init_weights_dir out_numeric_finetune_bert --output_dir out_drop_finetune_numeric --num_train_samples -1
 ```
 
-GenBERT + TD + DROP
+*GenBERT + TD + DROP*
 ```
 CUDA_VISIBLE_DEVICES=0,1,2,3 python finetune_on_drop.py   --do_train   --do_eval  --examples_n_features_dir ./data/examples_n_features/ --train_batch_size 14 --mlm_batch_size -1 --eval_batch_size 400 --learning_rate 3e-5  --max_seq_length 512 --num_train_epochs 30.0 --warmup_proportion 0.1 --init_weights_dir out_syntext_finetune_bert --output_dir out_drop_finetune_syntext --num_train_samples -1
 ```
 
-GenBERT + ND + TD + DROP
+*GenBERT + ND + TD + DROP*
 ```
 CUDA_VISIBLE_DEVICES=0,1,2,3 python finetune_on_drop.py   --do_train   --do_eval  --examples_n_features_dir ./data/examples_n_features/ --train_batch_size 14 --mlm_batch_size -1 --eval_batch_size 400 --learning_rate 3e-5  --max_seq_length 512 --num_train_epochs 30.0 --warmup_proportion 0.1 --init_weights_dir out_syntext_and_numeric_finetune_numeric --output_dir out_drop_finetune_syntext_and_numeric --num_train_samples -1
 ```

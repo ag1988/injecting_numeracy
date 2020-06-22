@@ -1,3 +1,6 @@
+# Coming Soon!!  
+
+---
 # Pre-training BERT on datasets in DROP format
 
 **Download the data + trained models** : Download `genbert_data_and_models.tar.gz` from ?? to the current dir. Untar it and download DROP dataset using `bash download.sh`. This will also place the downloaded data inside appropriate sub-dirs.
