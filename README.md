@@ -8,9 +8,11 @@ This repository contains the accompanying code for the paper:
 
 ### Structure
 The repository contains:
-* Implementation of GenBERT (coming soon!)
-* Code and vocabularies for textual data generation
-* Code for numerical data generation (coming soon!)
+* Implementation/pre-training/finetuning of GenBERT on MLM/synthetic-data/DROP/SQuAD (in `pre_training` dir)
+* Code and vocabularies for textual data generation (in `textual_data_generation` dir)
+* Code for numerical data generation (in `pre_training/numerical_data_generation` dir)   
+
+Instructions for downloading our data + models are in the README of `pre_training` dir.
 
 ---
 ### Citation
