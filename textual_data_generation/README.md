@@ -11,4 +11,6 @@ python -m spacy download en
 
 To generate examples, run the `generate_examples.py` script (see the help menu for configuration options).
 
-The code was tested in a **Python 3.6.8** environment.
+The code was tested in a **Python 3.6.8** environment.   
+
+Contact: Mor Geva
