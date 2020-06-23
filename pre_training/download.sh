@@ -1,4 +1,6 @@
-# downloaded genbert_data_and_models.tar.gz from link provided
+# downloaded genbert_data_and_models.tar.gz
+echo "downloading genbert_data_and_models.tar.gz (7.7G) ... this can take some time ..."
+wget https://storage.googleapis.com/ai2i/genbert/genbert_data_and_models.tar.gz
 
 # untar the downloaded data to get pre_training_data.tar.gz, gen_bert_models.tar.gz, squad_models.tar.gz
 echo "inflating genbert_data_and_models.tar.gz ..."

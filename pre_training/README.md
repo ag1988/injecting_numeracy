@@ -1,11 +1,10 @@
-# Coming Soon!!  
-
----
 # Pre-training BERT on datasets in DROP format
 
-**Download the data + trained models** : Download `genbert_data_and_models.tar.gz` from ?? to the current dir. Untar it and download DROP dataset using `bash download.sh`. This will also place the downloaded data inside appropriate sub-dirs.
+**Download the data + trained models** : To download our data & models and then pre-process it, run `bash download.sh`. This will also place the downloaded data inside appropriate sub-dirs.  
 
-**Masked LM Task** : Wiki pages inside `./data/MLM_paras.jsonl` are tokenized and masked via `gen_train_data_MLM.py` (to create `MLM_paras.jsonl`, after [downloading & preparing](https://hotpotqa.github.io/wiki-readme.html) Wikipedia, we concatenated the paras after placing a string `■ .` to indicate end of para. We only kept the pages corresponding to the titles in `./data/wiki_titles_used.jsonl`). You can create masked MLM instances via:
+You're not required to follow the instructions exactly - feel free to skip the steps accordingly. E.g. if you're not interested in pre-training and only want to evaluate our finetuned models on DROP you can simply skip the steps involving the synthetic and MLM data.  
+
+**Masked LM Task** : Wiki pages inside `./data/MLM_paras.jsonl` can be tokenized and masked via `gen_train_data_MLM.py` (to create `MLM_paras.jsonl`, after [downloading & preparing](https://hotpotqa.github.io/wiki-readme.html) Wikipedia, we concatenated the paras after placing a string `■ .` to indicate end of para. We only kept the pages corresponding to the titles in `./data/wiki_titles_used.jsonl`). You can create masked MLM instances via:
 ```
 python gen_train_data_MLM.py --train_corpus ./data/MLM_paras.jsonl --bert_model bert-base-uncased --output_dir ./data/MLM_train/ --do_lower_case --max_predictions_per_seq 65 --digitize
 ```
@@ -30,7 +29,7 @@ This will output `synthetic_textual_mixed_min3_max6_up0.7_train_drop_format.json
 
 ---
 
-This concludes the data generation part - one can now finetune by following the README inside `./gen_bert` dir.  
+**This concludes the data generation part - you can now pre-train/finetune by following the README inside `./gen_bert` dir.**  
 
 Code was tested on Python 3.7.6 with `requirements.txt` containing the list of libraries.   
 

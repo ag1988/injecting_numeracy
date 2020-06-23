@@ -1,6 +1,6 @@
 # Pre-training/finetuning models on DROP-like datasets
 
-You can ignore step 2) if you do not wish to re-train the trained models that we provide.
+You can skip the steps accordingly. E.g. if you're not training on synthetic data, you dont need to create features for it. Similarly, you can ignore step 2) if you do not wish to re-train the trained models that we provide.
 
 1) Create features from drop-like data (Digit Tokenizaiton will be used by default):
 ```
@@ -64,6 +64,14 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python finetune_on_drop.py   --do_train   --do_eval
 ```
 For each training, its output dir also contains informative files such as `training_args.bin` (can loaded via torch.load()), Tensorboard logs inside `log`, etc.
 
+
+We provide our trained models with the following output dirs.
+
+|                       | BERT                   | +ND                       | +TD                       | +ND+TD                                   | +ND-LM                           | +ND-LM-RS                                 | +ND-LM-DT                           |
+|----|----|----|----|----|----|----|----|
+| pre-trained           | -                      | out_numeric_finetune_bert | out_syntext_finetune_bert | out_syntext_and_numeric_finetune_numeric | out_no_mlm_numeric_finetune_bert | out_no_mlm_no_shift_numeric_finetune_bert | out_wp_no_mlm_numeric_finetune_bert |
+| finetuned on DROP     | out_drop_finetune_bert | out_drop_finetune_numeric | out_drop_finetune_syntext | out_drop_finetune_syntext_and_numeric    | out_drop_finetune_no_mlm_numeric | out_drop_finetune_no_mlm_no_shift_numeric | -                                   |
+| finetuned on SQuAD v1 | out_squad_bert_orig    | out_squad_numeric         | out_squad_syntext         | out_squad_syntext_and_numeric            | out_squad_no_mlm_numeric         | -                                         | -                                   |
 
 3) Inference.
 ```
