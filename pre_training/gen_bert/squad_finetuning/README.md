@@ -38,4 +38,8 @@ python evaluate-v1.1.py --dataset_file data/dev-v1.1.json --prediction_file out_
 ##### Notes:  
 1) To use a pre-trained model from a directory use --bert_model path_to_pre_train_dir .  
 2) To use segment ids like in conventional BERT finetuning use --use_segment_ids .  
-3) To use digit tokenization on top of word-piece tokenization use --indiv_digits .  
+3) To use digit tokenization on top of word-piece tokenization use --indiv_digits .   
+
+Contact: Ankit Gupta
+
+
