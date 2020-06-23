@@ -87,8 +87,7 @@ python drop_eval.py --gold_path ../data/drop_dataset_dev.json --prediction_path 
 ```
 In case the prediction file supplied in --prediction_path is a .jsonl (list of dicts), to identify which key in these dicts corresponds to the prediction string, one can supply the key name using --answer_key. Otherwise, one can simply supply a .json containing query_id's as keys and prediction strings as values.
 
-5) SQuAD finetuning
-You can also finetune the pre-trained models on SQuAD v1 by following the README inside `squad_finetuning` dir.
+5) **SQuAD finetuning** : You can finetune the pre-trained models on SQuAD v1 by following the README inside `squad_finetuning` dir.
 
 Notes:
 1) To load a pre-trained model use --init_weights_dir out_your_previous_outdir .  
