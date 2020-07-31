@@ -614,7 +614,7 @@ def inference(args, model, eval_dataloader, device, tokenizer):
         input_ids, input_mask, segment_ids, label_ids, head_type, q_spans, p_spans = batch
         
         with torch.no_grad():
-            out = model(input_ids, segment_ids, task='inference')
+            out = model(input_ids, segment_ids, task='inference', max_decoding_steps=eval_dataloader.dataset.max_dec_steps)
             # here segment_ids are only used to get the best span prediction
             dec_preds, type_preds, start_preds, end_preds, type_logits = tuple(t.cpu() for t in out)
             # dec_preds: [bsz, max_deocoding_steps], has start_tok

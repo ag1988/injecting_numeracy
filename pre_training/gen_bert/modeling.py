@@ -1048,7 +1048,7 @@ class BertTransformer(BertPreTrainedModel):
     
     def forward(self, input_ids, token_type_ids=None, input_mask=None, random_shift=False, 
                 target_ids=None, target_mask=None, answer_as_question_spans=None, answer_as_passage_spans=None,
-                head_type=None, ignore_idx=0, task=''):
+                head_type=None, ignore_idx=0, task='', max_decoding_steps=20):
         # answer_as_question_spans: [bsz, # answers, 2], -1: ignore
         # head_type: [bsz]  0 for decoder, 1 for span-extraction, -1: ignore 
         # segment_ids are only used for question, passage mask computation and not for encoding
@@ -1057,7 +1057,7 @@ class BertTransformer(BertPreTrainedModel):
             return self.mlm_task(input_ids, None, input_mask, target_ids, ignore_idx=ignore_idx)
         
         if task.lower() == 'inference':
-            return self.inference(input_ids, token_type_ids, input_mask)
+            return self.inference(input_ids, token_type_ids, input_mask, max_decoding_steps=max_decoding_steps)
         
         # encode
         input_mask = self.mask(input_ids, input_mask)
